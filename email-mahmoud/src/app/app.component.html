@@ -2,14 +2,20 @@
   <h3>Manda una mail</h3>
   <div>
     <label for="Mail">Mail:</label>
-    <input name="Title">
+    <input name="Mail" #email>
   </div>
   <div>
     <label for="Oggetto">Oggetto:</label>
-    <input name="Oggetto">
+    <input name="Oggetto" #oggetto>
   </div>
   <div>
     <label for="Testo">Testo:</label>
-    <input name="Testo">
+    <input name="Testo" #testo>
   </div>
+  <button (click)="Invia(email, oggetto, testo)"> 
+    Invia
+    </button>
 </form>
+@for (email of emailvett; trach email){
+  <app-sent-email [Email] = "email"></app-sent-email>
+}
